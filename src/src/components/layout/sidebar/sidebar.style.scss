@@ -1,0 +1,111 @@
+#sidebar {
+  flex: 0 0 243px;
+  height: 100vh;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: #f0f0f0;
+
+  &.collapsed {
+    flex: 0 0 66px;
+    overflow: hidden;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      height: 56px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #242424;
+
+        .menu-button {
+          line-height: var(--lineHeightBase100);
+          min-width: 66px;
+          height: 56px;
+          display: flex;
+          flex-direction: column;
+          -webkit-box-align: center;
+          align-items: center;
+          justify-content: center;
+
+          .marker {
+            display: none;
+            position: absolute;
+            width: 2px;
+            height: 46px;
+            background-color: var(--colorBrandForeground1);
+            left: 2px;
+          }
+
+          .button-icon {
+            > .default {
+              display: block;
+            }
+
+            > .active {
+              display: none;
+            }
+          }
+
+          .button-text {
+            font-size: var(--fontSizeBase200);
+          }
+        }
+
+        &.active .menu-button {
+          background: none;
+          .button-icon svg,
+          .button-text {
+            color: var(--colorBrandForeground1);
+          }
+
+          .marker {
+            display: block;
+          }
+
+          .button-icon {
+            > .default {
+              display: none;
+            }
+
+            > .active {
+              display: block;
+            }
+          }
+        }
+
+        &:hover,
+        &:active,
+        &:hover:active {
+          .menu-button {
+            color: inherit;
+            background-color: var(--colorNeutralBackground4Selected);
+
+            .button-icon svg,
+            .button-text {
+              color: var(--colorBrandForeground1);
+            }
+
+            .button-icon {
+              > .default {
+                display: none;
+              }
+
+              > .active {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+header {
+  background: #f0f0f0;
+  box-shadow: none;
+
+  > nav {
+    height: 48px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    > * {
+      height: 100%;
+    }
+
+    .left {
+      align-items: center;
+
+      #menu-button {
+        max-width: 47px;
+        width: 47px;
+        border: none;
+        border-radius: 0;
+        height: 100%;
+        background-color: f0f0f0;
+        color: white;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border: none;
+          border-radius: 0;
+        }
+      }
+
+      #logo {
+        padding: 0 20px;
+        font-size: 16px;
+      }
+
+      .vertical-devider {
+        height: 100%;
+        width: 2px;
+        background-color: var(--colorBrandForegroundOnLight);
+      }
+    }
+
+    .right {
+      align-items: center;
+
+      button {
+        background: none;
+        display: block;
+        height: 100%;
+        padding: 0;
+        min-width: 48px;
+        border: none;
+        border-radius: 0%;
+
+        > svg {
+          display: inline-block;
+          vertical-align: middle;
+          color: #242424;
+        }
+
+        &:hover,
+        &:active,
+        &:hover:active {
+          background: var(--colorBrandForeground1);
+
+          > svg {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

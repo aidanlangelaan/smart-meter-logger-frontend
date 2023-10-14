@@ -1,0 +1,12 @@
+{
+    "arrowParens": "always",
+    "printWidth": 160,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "endOfLine": "auto",
+    "importOrder": ["^react", "^@fluentui/(.*)$", "^[^.](.*)$", "^[./]"],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true
+}
