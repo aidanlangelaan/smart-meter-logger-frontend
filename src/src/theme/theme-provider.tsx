@@ -5,7 +5,7 @@ import { themes } from "./themes";
 import { localStorageProvider } from "@/utility/local-storage-provider";
 
 const getBrowserDefault = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-const userDefaultPreferredThemeMode = () => ThemeMode.Light; //(getBrowserDefault() ? ThemeMode.Dark : ThemeMode.Light); // TODO: Fix this
+const userDefaultPreferredThemeMode = () => (getBrowserDefault() ? ThemeMode.Dark : ThemeMode.Light); // TODO: Fix this
 
 export const ThemeProvider = (props: FluentProviderProps): JSX.Element => {
   const [theme, setTheme] = useState<ThemeMode>(ThemeMode.Default);

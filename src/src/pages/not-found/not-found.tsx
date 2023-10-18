@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function NotFoundPage(): JSX.Element {
   return (
     <div>
-      <h2>Nothing to see here!</h2>
+      <h1>Lost your way?</h1>
       <p>
-        <Link to="/">Return to the dashboard</Link>
+        <Link to="/">Return home</Link>
       </p>
     </div>
   );

@@ -1,0 +1,13 @@
+:root {
+  --colorMainNavigationBackground: #f0f0f0;
+}
+
+body {
+  &.light {
+    --colorMainNavigationBackground: #f0f0f0;
+  }
+
+  &.dark {
+    --colorMainNavigationBackground: #242424;
+  }
+}

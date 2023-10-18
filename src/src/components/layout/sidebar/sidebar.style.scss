@@ -3,7 +3,7 @@
   height: 100vh;
   flex-grow: 0;
   flex-shrink: 0;
-  background: #f0f0f0;
+  background: var(--colorMainNavigationBackground);
 
   &.collapsed {
     flex: 0 0 66px;

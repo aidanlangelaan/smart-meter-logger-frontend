@@ -1,15 +1,18 @@
 import "./header.style.scss";
 
 import { Avatar, Button } from "@fluentui/react-components";
-import { GridDots24Filled, Settings24Regular } from "@fluentui/react-icons";
+import { Settings24Regular } from "@fluentui/react-icons";
 
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useContext } from "react";
+import { SettingsDrawerContext } from "../settings-drawer/settings-drawer.context";
 
 export default function LayoutHeader(props: { onMenuButtonClick: MouseEventHandler }): JSX.Element {
   const { onMenuButtonClick } = props;
 
+  var settingsDrawerContext = useContext(SettingsDrawerContext);
+
   return (
-    <header>
+    <header id="header-bar">
       <nav className="flex-container">
         <div className="flex-container left">
           {/* <Button icon={<GridDots24Filled />} onClick={onMenuButtonClick} /> */}
@@ -18,7 +21,7 @@ export default function LayoutHeader(props: { onMenuButtonClick: MouseEventHandl
         </div>
 
         <div className="flex-container right">
-          <Button id="settings-button" title="Settings">
+          <Button id="settings-button" title="Settings" onClick={settingsDrawerContext.toggleState}>
             <Settings24Regular />
           </Button>
           <Button title="Account">

@@ -6,7 +6,7 @@
   display: none;
 }
 
-header {
+#header-bar {
   height: 48px;
 }
 
@@ -35,7 +35,7 @@ header {
 
     box-shadow: var(--shadow8, 0 0 2px var(--colorNeutralShadowAmbient, rgba(0, 0, 0, 0.12)), 0 2px 4px var(--colorNeutralShadowKey, rgba(0, 0, 0, 0.14)));
 
-    > div {
+    > div:first-child {
       display: flex;
       flex-direction: column;
       z-index: 0;

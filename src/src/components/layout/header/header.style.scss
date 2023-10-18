@@ -1,5 +1,5 @@
-header {
-  background: #f0f0f0;
+#header-bar {
+  background: var(--colorMainNavigationBackground);
   box-shadow: none;
 
   > nav {

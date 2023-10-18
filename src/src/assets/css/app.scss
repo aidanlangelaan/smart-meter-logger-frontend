@@ -13,8 +13,17 @@ body,
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: var(--fontSizeBase300, 14px);
+  font-weight: var(--fontWeightRegular, 400);
+  color: var(--colorNeutralForeground1, #242424);
 
-  .fui-FluentProvider {
-    height: 100%;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 400;
+    margin: 0;
+    line-height: normal;
   }
 }
