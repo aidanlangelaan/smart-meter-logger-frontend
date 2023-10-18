@@ -41,11 +41,15 @@
             position: absolute;
             width: 2px;
             height: 46px;
-            background-color: var(--colorBrandForeground1);
+            background-color: var(--colorNeutralForeground3);
             left: 2px;
           }
 
           .button-icon {
+            svg {
+              color: var(--colorNeutralForeground3);
+            }
+
             > .default {
               display: block;
             }
@@ -56,7 +60,8 @@
           }
 
           .button-text {
-            font-size: var(--fontSizeBase200);
+            font-size: var(--fontSizeBase100);
+            color: var(--colorNeutralForeground3);
           }
         }
 
@@ -64,11 +69,12 @@
           background: none;
           .button-icon svg,
           .button-text {
-            color: var(--colorBrandForeground1);
+            color: var(--colorNeutralForeground3BrandSelected);
           }
 
           .marker {
             display: block;
+            background-color: var(--colorNeutralForeground3BrandSelected);
           }
 
           .button-icon {

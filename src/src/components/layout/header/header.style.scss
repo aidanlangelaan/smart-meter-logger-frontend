@@ -58,13 +58,13 @@
         > svg {
           display: inline-block;
           vertical-align: middle;
-          color: #242424;
+          color: var(--colorNeutralForeground3);
         }
 
         &:hover,
         &:active,
         &:hover:active {
-          background: var(--colorBrandForeground1);
+          background: var(--colorNeutralForeground3BrandSelected);
 
           > svg {
             color: white;

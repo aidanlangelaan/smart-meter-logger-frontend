@@ -3,9 +3,8 @@ import { DrawerBody, DrawerHeader, DrawerHeaderTitle, DrawerInline } from "@flue
 import { Dismiss24Regular } from "@fluentui/react-icons";
 import "./settings-drawer.style.scss";
 import { SettingsDrawerContext, SettingsDrawerState } from "./settings-drawer.context";
-import { useContext, useEffect, useId } from "react";
+import { useContext, useId } from "react";
 import { ThemeContext, ThemeMode } from "@/theme/theme-context";
-import { themes } from "@/theme/themes";
 
 export default function HeaderSettingsDrawer(props: Partial<DropdownProps>): JSX.Element {
   const { state, toggleState } = useContext(SettingsDrawerContext);
@@ -23,10 +22,6 @@ export default function HeaderSettingsDrawer(props: Partial<DropdownProps>): JSX
     key: key as ThemeMode,
     text: themeOptions[key.toLowerCase() as ThemeMode],
   }));
-
-  useEffect(() => {
-    console.log(theme);
-  });
 
   const onThemeSelected: (typeof props)["onOptionSelect"] = (_, data) => {
     if (data.selectedOptions.length == 0) return;
@@ -60,8 +55,6 @@ export default function HeaderSettingsDrawer(props: Partial<DropdownProps>): JSX
             })}
           </Dropdown>
         </div>
-
-        {/* <Switch label="This is a switch" {...props} /> */}
       </DrawerBody>
     </DrawerInline>
   );
