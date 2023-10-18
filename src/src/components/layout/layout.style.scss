@@ -1,0 +1,45 @@
+.flex-container {
+  display: flex;
+}
+
+#breadcrumbs {
+  display: none;
+}
+
+header {
+  height: 48px;
+}
+
+#page-container {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  #sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 66px;
+    height: 100%;
+  }
+
+  #content-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 66px;
+    overflow: auto;
+
+    box-shadow: var(--shadow8, 0 0 2px var(--colorNeutralShadowAmbient, rgba(0, 0, 0, 0.12)), 0 2px 4px var(--colorNeutralShadowKey, rgba(0, 0, 0, 0.14)));
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      z-index: 0;
+      padding: 35px 50px 0 50px;
+    }
+  }
+}
