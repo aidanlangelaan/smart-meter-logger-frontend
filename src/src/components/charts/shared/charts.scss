@@ -1,0 +1,64 @@
+@import "@css/mixins.scss";
+
+#chart-tooltip {
+  background-color: var(--colorNeutralBackground2);
+  border: 1px solid #414141;
+  line-height: 24px;
+  margin: 0;
+  padding: 10px;
+  width: 225px;
+
+  .header {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .values {
+    display: table;
+
+    > p {
+      display: table-row;
+      margin: 0;
+      font-size: 16px;
+
+      .label {
+        display: table-cell;
+        padding-right: 15px;
+        font-weight: bold;
+      }
+
+      .value {
+        display: table-cell;
+        padding-right: 10px;
+      }
+
+      .unit {
+        display: table-cell;
+      }
+    }
+  }
+}
+
+.chart {
+  background-color: var(--colorNeutralBackground1);
+  border: 1px solid var(--colorRegularBorder);
+  padding: 30px;
+
+  header {
+    margin-bottom: 15px;
+
+    h3 {
+      color: var(--colorNeutralForeground1, #646464);
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      font-size: var(--fontSizeBase400, 16px);
+      font-weight: var(--fontWeightSemibold, 600);
+      line-height: var(--lineHeightBase400, 22px);
+    }
+
+    span {
+    }
+  }
+}

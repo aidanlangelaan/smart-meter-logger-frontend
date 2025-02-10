@@ -1,7 +1,7 @@
 import LayoutHeader from "./header/header";
 import LayoutSidebar from "./sidebar/sidebar";
 import { Outlet } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { localStorageProvider } from "@/utility/local-storage-provider";
 import SetPageTitle from "@/hooks/set-page-title";
 import "./layout.style.scss";
@@ -38,7 +38,6 @@ export default function Layout(props: ILayout): JSX.Element {
   return (
     <div>
       <SetPageTitle />
-
       <SettingsDrawerContext.Provider value={{ state: settingsDrawerState, toggleState: toggleSettingsDrawerState }}>
         <LayoutHeader onMenuButtonClick={toggleMenuMode} />
         <div id="page-container">

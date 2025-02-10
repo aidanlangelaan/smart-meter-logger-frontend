@@ -26,4 +26,21 @@ body {
     margin: 0;
     line-height: normal;
   }
+
+  h1 {
+    font-size: var(--fontSizeBase600, 24px);
+    line-height: 36px;
+    font-weight: var(--fontWeightSemibold, 600);
+    margin-bottom: 20px;
+  }
+
+  #charts-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
 }
+
+@import "@/components/charts/shared/charts.scss";

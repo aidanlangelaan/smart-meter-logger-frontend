@@ -8,10 +8,10 @@ import ApplyToBody from "./hooks/apply-to-body.tsx";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <ApplyToBody />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+  //<React.StrictMode>
+  <ThemeProvider>
+    <ApplyToBody />
+    <App />
+  </ThemeProvider>,
+  //</React.StrictMode>,
 );

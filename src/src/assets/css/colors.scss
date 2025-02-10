@@ -1,16 +1,16 @@
 :root {
   --colorMainNavigationBackground: #f0f0f0;
-  --colorDrawerBorder: #edebe9;
+  --colorRegularBorder: #edebe9;
 }
 
 body {
   &.light {
     --colorMainNavigationBackground: #f0f0f0;
-    --colorDrawerBorder: #edebe9;
+    --colorRegularBorder: #edebe9;
   }
 
   &.dark {
     --colorMainNavigationBackground: #0a0a0a;
-    --colorDrawerBorder: #5a5a5a;
+    --colorRegularBorder: #5a5a5a;
   }
 }

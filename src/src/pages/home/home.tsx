@@ -1,32 +1,36 @@
+import ChartElectricityUsageByDay from "@/components/charts/electricity/usage-by-day/usage-by-day";
+import ChartUsageByMonth from "@/components/charts/electricity/usage-by-month/usage-by-month";
+import ChartGasUsageByDay from "@/components/charts/gas/usage-by-day/usage-by-day";
+import { MeterContext } from "@/services/meter/meter.context";
+import { MeterType } from "@/services/shared/model/models";
+import { useContext } from "react";
+
 export default function HomePage(): JSX.Element {
+  const { meters } = useContext(MeterContext);
+
   return (
     <div>
       <h1>Smart Meter Logger Dashboard</h1>
 
-      <p>Hello!</p>
+      <div id="charts-container">
+        {meters != undefined &&
+          meters
+            .filter((meter) => meter.deviceType == MeterType.Electricity)
+            .map((meter) => (
+              <>
+                <ChartElectricityUsageByDay date={new Date("2023-10-25")} serialNumber={meter.serialNumber} />
+              </>
+            ))}
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis, ante vel gravida porttitor, metus neque porta nisi, ac scelerisque orci risus
-        id lacus. Mauris congue, urna vel porttitor consequat, nisi felis bibendum est, ut dapibus est nibh eu neque. Aliquam condimentum pellentesque nibh, sed
-        pharetra ipsum. Donec commodo sem quis orci malesuada porta. Donec turpis felis, auctor ac nunc id, dignissim blandit felis. Suspendisse aliquam
-        ullamcorper nisl quis porttitor. Aliquam vestibulum posuere magna, nec ultricies urna suscipit ut. Duis ut nunc egestas, lobortis enim nec, rhoncus
-        magna.
-      </p>
-
-      <p>
-        Aliquam erat volutpat. In vulputate sodales tristique. Morbi risus metus, volutpat at eros sed, consequat consequat neque. Quisque eget lacus et libero
-        aliquet porttitor eu eu massa. Nulla a felis eu risus eleifend accumsan. Duis lobortis erat sem. In eu diam dapibus, aliquam libero quis, egestas mi.
-        Phasellus eleifend a magna sed ornare. Quisque non rhoncus magna. Cras eros elit, tempor consectetur elit at, porta faucibus mauris. Mauris non ligula
-        tempus, interdum ipsum non, sollicitudin sapien. Suspendisse potenti. Cras id pellentesque est. Mauris risus augue, efficitur ac libero in, egestas
-        auctor enim. Nulla facilisi. Nunc at feugiat dui, id vulputate sapien.
-      </p>
-
-      <p>
-        Maecenas pulvinar ullamcorper ullamcorper. Quisque eget ante sed ex lacinia auctor. Maecenas metus lectus, imperdiet a ex non, facilisis vulputate
-        tortor. Aliquam vehicula purus at tortor viverra, a fermentum nunc mattis. Fusce vitae sollicitudin sem. Etiam lobortis libero nec dolor ultrices, sed
-        iaculis nulla egestas. Suspendisse malesuada tincidunt magna, et semper mi scelerisque id. Curabitur consequat faucibus orci, a tempus metus convallis
-        nec. Sed vitae tellus facilisis, maximus nisi et, ornare nulla.
-      </p>
+        {meters != undefined &&
+          meters
+            .filter((meter) => meter.deviceType == MeterType.Gas)
+            .map((meter) => (
+              <>
+                <ChartGasUsageByDay date={new Date("2023-10-28")} serialNumber={meter.serialNumber} />
+              </>
+            ))}
+      </div>
     </div>
   );
 }
